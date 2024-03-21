@@ -29,17 +29,23 @@ body {
         ' . msg-form .' min-content /
         15rem 1fr 15rem;
 
-    justify-items: center;
     align-content: center;
     gap: 1em;
 }
 
-div#chat-box {
+div#chat-box-container {
     grid-area: chat-box;
     border: 2px white solid;
-    display: block;
-    
-    width: 100%;
+    padding: 1em;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-y: scroll;
+}
+
+div#chat-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
 }
 
 form#send-message-form {
@@ -47,8 +53,6 @@ form#send-message-form {
     display: flex;
     flex-direction: column;
     gap: 0.5em;
-
-    width: 100%;
 }
 
 input#send-message-btn {
@@ -57,4 +61,14 @@ input#send-message-btn {
 
 input#send-message-text {
     font: unset;
+}
+
+div.chat-message-container {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+span.msg-name-tag {
+    padding-inline: 0.5em;
 }
